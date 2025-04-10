@@ -1,5 +1,7 @@
 
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 /**
@@ -7,6 +9,31 @@ import java.util.Scanner;
  */
 
 public class Tools {
+
+
+	public static LocalDate leggiData(String message){
+		Scanner tastiera = new Scanner(System.in);
+		boolean ok=false;
+		String data="";
+		LocalDate ld = LocalDate.now();
+		DateTimeFormatter d = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+		do{
+
+			System.out.println(message);
+			data = tastiera.nextLine();
+			System.out.println();
+			try {
+				ld = LocalDate.parse(data,d);
+				ok = true;
+			} catch (java.time.format.DateTimeParseException e) {
+				ok = false;
+				System.out.println("Data sbagliata : yyyy-MM-dd");
+			}
+
+		}while(!ok);
+
+		return ld;
+	}
 
 	/**
 	 * Toglie tutti gli spazi dalla stringa
