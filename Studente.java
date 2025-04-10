@@ -51,6 +51,14 @@ public class Studente extends Persona{
         return voti.size();
     }
 
+    public double media(){
+        double somma = 0;
+        for(int i=0;i<voti.size();i++){
+            somma = somma + voti.elementAt(i);
+        }
+        return somma/getNVoti();
+    }
+
     public String toString(){
         String s=super.toString();
         s = s + "Anno : " + this.anno + "\n";
