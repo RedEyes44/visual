@@ -1,3 +1,4 @@
+
 import java.time.LocalDate;
 
 public class Persona {
@@ -67,3 +68,40 @@ public class Persona {
         
         return s;
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
